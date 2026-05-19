@@ -1,0 +1,8 @@
+# Aethel-8 Example: Multiply and Accumulate
+# This program multiplies two variables and writes the result to RAM.
+
+LDA 12     ; Load our first data variable (Decimal 12 -> 0x0C) into Reg A
+LDB 5      ; Load our multiplier multiplier (Decimal 5 -> 0x05) into Reg B
+MUL        ; ALU math: Reg A = Reg A * Reg B (12 * 5 = 60, which is 0x3C in hex)
+STA 32     ; Take that 0x3C result out of Reg A and flash it directly to RAM slot 32 (0x20)
+HALT       ; Calculation complete, terminate the automated execution pipeline
