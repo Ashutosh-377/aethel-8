@@ -1,0 +1,8 @@
+# Aethel-8 Example: Algorithmic Countdown Loop
+# This program sets a counter and decrements it until it hits 0.
+
+LDA 3      ; Set up our loop counter (start at 3)
+LDB 1      ; Put a flat 1 in Reg B to use as our subtractor
+SUB        ; ALU math: Reg A = Reg A - Reg B. Updates the Zero Flag!
+JNZ 4      ; If Reg A isn't 0 yet (ZF is 0), jump back to the SUB instruction at address 0x04
+HALT       ; Counter hit 0! Stop the CPU cycle loop cleanly
